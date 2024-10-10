@@ -1,0 +1,35 @@
+API
+GET https://catfact.ninja/fact
+
+Requirements
+
+Given I am under the root route: */*
+Then I should see a random cat fact displayed
+Given I am under the root route: */*
+When I refresh the page
+Then I should see a new random cat fact displayed
+
+Design Specs
+
+Page:
+
+Background color
+Center content vertically
+Center content horizontally
+
+Card:
+
+Use Bootstrap Card Template
+Rounded corners
+Border color
+Background color
+Padding
+Text color
+Text size and style
+
+Architecture
+
+Component
+Model
+HttpClient
+No Routing needed
