@@ -7,31 +7,25 @@ import { toSignal } from '@angular/core/rxjs-interop';
   providedIn: 'root',
 })
 export class StoreService {
+  constructor() {}
 
   apiService: ApiService = inject(ApiService);
 
-  cat = toSignal(this.apiService.getCat(), {initialValue: {
+  cat = signal<Cat>({
     fact: '',
     length: 0,
-  }})
+  });
 
-  // cat = signal<Cat>({
+  // cat = toSignal(this.apiService.getCat(), {initialValue: {
   //   fact: '',
   //   length: 0,
-  // });
-
-  constructor() {}
-
-  // storeCat() {
-  //   this.apiService.getCat().subscribe({
-  //     next: (res: Cat) => {
-  //       this.cat.set(res)
-  //       console.log(this.cat());
-        
-  //     },
-  //     error: (err) => console.log(err)
-      
-  //   });
-    
-  // }
+  // }});
+  storeCat() {
+    this.apiService.getCat().subscribe({
+      next: (res: Cat) => {
+        this.cat.set(res);
+      },
+      error: (err) => console.log(err),
+    });
+  }
 }

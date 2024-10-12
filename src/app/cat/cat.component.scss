@@ -1,0 +1,18 @@
+.card-body {
+  width: 500px;
+}
+
+.card-text {
+  min-height: 100px;
+}
+
+.bg-gradient {
+    background: linear-gradient(to right, #fefeff, #c6cbd1) !important;
+  }
+  
+@media (max-width: 250px) {
+  .card-body {
+    width: 300px;
+  }
+}
+
